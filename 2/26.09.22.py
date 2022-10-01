@@ -10,11 +10,14 @@
 
 
 while True:
-    user_age = int(input('Скільки тобі років?: '))
-    if user_age <= 4 or user_age >= 80:
-        print("Введіть правильні дані")
-        continue
-    break
+    try:
+        user_age = int(input('Скільки тобі років?: '))
+        if user_age <= 4 or user_age >= 80:
+            print('Введіть правильні дані')
+            continue
+        break
+    except ValueError as error:
+        print('Введіть правильно, треба числове значення')
 
 if '7' in str(user_age):
     print('Вам сьогодні пощастить!')
