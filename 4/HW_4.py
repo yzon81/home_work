@@ -6,7 +6,7 @@ user_input = input("Будь ласка введіть строку зі слі�
 
 result = user_input.split()
 
-consonant_list =['a', 'e', 'i', 'o', 'u', 'y']
+consonant_list =['o', 'y', 'i', 'a', 'u', 'e']
 
 word_count = 0
 
