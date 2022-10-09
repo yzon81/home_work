@@ -33,8 +33,7 @@ print('У цьому рядку ' + str(result) + ' слів')
 # змінюватись від запуску до запуску.
 
 lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 4.85, 'Python', 9, 0, 'Lorem Ipsum', 1.1]
-lst2 = lst1
-print(lst2)
+
 lst2 = []
 for i in lst1:
     if type(i) == int or type(i) == float:
