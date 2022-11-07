@@ -4,57 +4,39 @@
 # Створіть обʼєкти класів "Автомобіль", "Літак", "Корабель".
 
 class Vehicle:
-    manufacturer = 'Odessa'
-    management = 'Human'
-    mode_movement = 'Engine'
+    def __init__(self, manufacturer, management, mode_movement):
+        self.manufacturer = manufacturer
+        self.management = management
+        self.mode_movement = mode_movement
 
 
 class Car(Vehicle):
-    fuel = 'gasoline'
-    number_cylinders = 4
-    body_type = 'crossover'
-    brand = 'zaporozhets'
-
-    def car_text(self):
-        return f"The car is driven by a {self.management}, the {self.mode_movement} is used to move, \
-type of fuel for the engine - {self.fuel}, number of cylinders in the engine - {self.number_cylinders}, body type \
-{self.body_type}, make of car - '{self.brand}', country of manufacturer - '{self.manufacturer}' "
-
-
-car1 = Car()
+    def __init__(self, manufacturer, management, mode_movement, fuel, number_cylinders, body_type, brand):
+        super().__init__(manufacturer, management, mode_movement)
+        self.fuel = fuel
+        self.number_cylinders = number_cylinders
+        self.body_type = body_type
+        self.brand = brand
 
 
 class Plane(Vehicle):
-    fuel = 'kerosene aviation '
-    number_cylinders = 16
-    type_aircraft = 'Fighter'
-    brand = 'Bayraktar'
-
-    def plane_text(self):
-        return f"The plane is driven by a {self.management}, the {self.mode_movement} is used to move, \
-type of fuel for the engine - {self.fuel}, number of cylinders in the engine - {self.number_cylinders}, type \
-of aircraft '{self.type_aircraft}', make of plane '{self.brand}', country of manufacturer - '{self.manufacturer}' "
-
-
-plane1 = Plane()
+    def __init__(self, manufacturer, management, mode_movement, fuel, number_cylinders, type_aircraft, brand):
+        super().__init__(manufacturer, management, mode_movement)
+        self.fuel = fuel
+        self.number_cylinders = number_cylinders
+        self.type_aircraft = type_aircraft
+        self.brand = brand
 
 
 class Ship(Vehicle):
-    fuel = 'diesel'
-    number_cylinders = 12
-    ship_type = 'dry cargo'
-    brand = 'Canon'
-
-    def ship_text(self):
-        return f"The ship is driven by a {self.management}, the {self.mode_movement} is used to move, \
-type of fuel for the engine - {self.fuel}, number of cylinders in the engine - {self.number_cylinders}, type \
-of ship {self.ship_type}, make of ship '{self.brand}', country of manufacturer - '{self.manufacturer}' "
+    def __init__(self, manufacturer, management, mode_movement, fuel, number_cylinders, ship_type, brand):
+        super().__init__(manufacturer, management, mode_movement)
+        self.fuel = fuel
+        self.number_cylinders = number_cylinders
+        self.ship_type = ship_type
+        self.brand = brand
 
 
-ship1 = Ship()
-
-print(car1.car_text())
-
-print(plane1.plane_text())
-
-print(ship1.ship_text())
+car = Car('Odessa', 'human', 'engine', 'gasoline', '4', 'crossover', 'zaporozhets')
+plane = Plane('Odessa', 'human', 'engine', 'kerosene_aviation', '16', 'fighter', 'Bayraktar')
+ship = Ship('Odessa', 'human', 'engine', 'diesel', '12', 'dry_cargo', 'canon')
