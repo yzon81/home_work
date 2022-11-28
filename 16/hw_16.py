@@ -15,13 +15,7 @@ else:
         else:
             print(type(resp_json))
             print(resp_json)
-        if resp_json is not None:
-            counter = 1
-            with open('hw_16-txt.txt', 'w') as file:
-                file.write(f"{resp_json[0]['exchangedate']}\n")
-                for res in resp_json:
-                    file.write(f"{counter}. {res['txt']} to UAH: {res['rate']}\n")
-                    counter += 1
-        else:
-            with open('hw_16-txt.txt', 'w') as file:
-                file.write(res.content)
+
+        with open('hw_16-txt.txt', 'wb') as file:
+            file.write(res.content)
+
